@@ -1,0 +1,583 @@
+/* Reset global para garantir consistência entre navegadores */
+/* Adicionando uma rolagem suave para toda a página */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Para garantir que o padding e border não afetam o tamanho total do elemento */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: rgb(171, 253, 246, 0.8);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', serif; /* Para títulos, conferindo sofisticação */
+}
+
+/* Cabeçalho */
+header {
+    position: fixed; /* Fixa o cabeçalho no topo */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cabeçalho ocupa toda a largura da tela */
+    background: rgba(0, 111, 142, 0.8); /* Fundo semi-transparente para destacar o conteúdo */
+    padding: 20px;
+    color: white;
+    text-align: center;
+    z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para dar profundidade */
+}
+
+header h1 {
+    font-size: 2rem; /* Ajuste do tamanho da fonte */
+    margin-bottom: 10px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Centraliza os itens do menu */
+    padding: 0;
+    flex-wrap: wrap; /* Permite quebrar a linha se necessário */
+    margin-top: 20px;
+}
+
+.navbar ul li {
+    margin: 0 15px; /* Ajusta o espaçamento entre os itens */
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem; /* Ajuste de tamanho da fonte para telas menores */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease; /* Transição suave para mudança de cor */
+}
+
+.navbar ul li a:hover {
+    color: #00A859; /* Muda a cor quando o item é hover */
+}
+
+
+
+/* Seção Hero */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('https://images.educamaisbrasil.com.br/content/noticias/quanto-tempo-dura-a-faculdade-de-odontologia_g.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Alinha o conteúdo (texto + botão) no centro */
+    color: white;
+    text-align: center;
+}
+
+.hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Sombreamento para dar destaque ao conteúdo */
+    z-index: 1;
+}
+
+.hero-content {
+    z-index: 2;
+    margin-bottom: 20px; /* Espaço entre o texto e o botão */
+}
+
+.hero h2 {
+    font-size: 2.5rem; /* Ajuste de tamanho da fonte */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Efeito de sombra no título */
+}
+
+.hero p {
+    font-size: 1.2rem; /* Ajuste de tamanho da fonte */
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Efeito de sombra no texto */
+}
+
+/* Estilo do botão "Conheça Nossos Serviços" */
+.cta-button {
+    background-color: #00A859;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.3s; /* Efeito de transição no hover */
+    z-index: 2; /* Coloca o botão acima de outros elementos */
+}
+
+.cta-button:hover {
+    background-color: #006F8E;
+    transform: scale(1.1); /* Aumenta o botão ao passar o mouse */
+}
+
+/* Seção Sobre */
+#sobre {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: rgb(171, 253, 246, 0.8); /* Cor de fundo suave para a seção */
+}
+
+#sobre .section-title {
+    font-size: 2.5rem;
+    color: #006F8E;
+    margin-bottom: 30px;
+}
+
+.sobre-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 80%; /* Ajuste a largura conforme necessário */
+    max-width: 900px; /* Tamanho máximo para o contêiner */
+    margin: 0 auto; /* Centraliza o contêiner */
+    text-align: left; /* Alinha o texto à esquerda */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito de transição suave */
+    margin-bottom: 30px; /* Espaço abaixo da seção */
+}
+
+.sobre-container:hover {
+    transform: translateY(-10px); /* Efeito de elevação quando o mouse passar sobre o contêiner */
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.15); /* Sombra mais forte no hover */
+}
+
+.sobre-container p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #555; /* Cor do texto */
+    margin-bottom: 15px; /* Espaço entre os parágrafos */
+}
+
+/* Seção de Serviços (Carrossel) */
+#servicos {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Título da seção de serviços */
+#servicos .section-title {
+    font-size: 2.5rem;
+    color: #006F8E;
+    margin-bottom: 30px;
+}
+
+/* Container do carrossel de serviços */
+.service-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Espaçamento entre os cards */
+    overflow: hidden; /* Esconde o conteúdo que ultrapassa os limites */
+    position: relative;
+    flex-wrap: wrap; /* Permite que os cards se ajustem em várias linhas */
+}
+
+.service-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 300px; /* Tamanho fixo para cada card */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efeito de transição suave */
+    margin-bottom: 30px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px); /* Efeito de "elevação" quando o mouse passar sobre o card */
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.15); /* Sombra mais forte no hover */
+}
+
+.service-card .icon {
+    font-size: 4rem;
+    color: #00A859;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Carrossel de depoimentos */
+.testimonial-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.testimonial {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    background-color: #fff;
+    margin: 0 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #555;
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.testimonial-name {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.testimonial-location {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.rating {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Rodapé */
+footer {
+    background-color: #006F8E;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer .social-media a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+
+footer .social-media a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8rem; /* Ajuste do tamanho da fonte do título */
+    }
+
+    .navbar ul {
+        display: block;
+        text-align: center; /* Centraliza o menu em dispositivos móveis */
+    }
+
+    .navbar ul li {
+        margin: 10px 0; /* Ajusta o espaçamento entre os itens */
+    }
+
+    .service-container {
+        flex-direction: column; /* Coloca os cards em coluna para telas menores */
+        align-items: center; /* Centraliza os cards */
+    }
+
+    .service-card {
+        width: 90%; /* Faz os cards ocuparem 90% da largura da tela */
+        margin: 10px 0;
+    }
+
+    .testimonial-container {
+        flex-direction: column; /* Coloca os depoimentos em coluna */
+        align-items: center; /* Centraliza os depoimentos */
+    }
+
+    .testimonial {
+        width: 90%; /* Faz os depoimentos ocuparem 90% da largura da tela */
+    }
+
+    .hero h2 {
+        font-size: 2rem; /* Diminui o tamanho da fonte no hero para telas menores */
+    }
+
+    .cta-button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+
+    footer .social-media a {
+        font-size: 1rem; /* Ajuste do tamanho das redes sociais */
+    }
+}
+
+/* Seção de Depoimentos */
+#depoimentos {
+    padding: 60px 20px;
+    text-align: center; /* Garante que todo o conteúdo da seção de depoimentos seja centralizado */
+}
+
+#depoimentos .section-title {
+    font-size: 2.5rem;
+    color: #006F8E;
+    margin-bottom: 30px;
+    text-align: center; /* Centraliza o título */
+    display: block; /* Garante que o título seja tratado como um bloco */
+}
+
+/* Estilos do menu hamburger (para telas pequenas) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+
+/* Estilos da navegação */
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #00A859;
+}
+
+/* Responsividade - para telas pequenas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Exibe o ícone do menu */
+    }
+
+    .navbar {
+        display: none; /* Inicialmente o menu é escondido */
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar.show {
+        display: block; /* Exibe o menu quando a classe 'show' é adicionada */
+    }
+
+    .navbar ul {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar ul li a {
+        font-size: 1.5rem;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    .navbar ul li a:hover {
+        color: #00A859;
+    }
+}
+
+/* Estilos do menu hamburger (para telas pequenas) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+}
+
+/* Estilos da navegação */
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #00A859;
+}
+
+/* Responsividade - para telas pequenas */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Exibe o ícone do menu */
+    }
+
+    .navbar {
+        display: none; /* Inicialmente o menu é escondido */
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar.show {
+        display: block; /* Exibe o menu quando a classe 'show' é adicionada */
+    }
+
+    .navbar ul {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+
+    .navbar ul li a {
+        font-size: 1.5rem;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+        text-transform: uppercase;
+    }
+
+    .navbar ul li a:hover {
+        color: #00A859;
+    }
+}
+/* Animação para esconder o header */
+header {
+    transition: transform 0.3s ease-in-out;  /* A transição suave */
+    transform: translateY(0);  /* Início com o header visível */
+}
+
+/* Quando o header estiver escondido */
+header.hidden {
+    transform: translateY(-100%);  /* Move o header para fora da tela */
+}
+
+.social-media {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    font-size: 28px;
+  
+  }
+  
+  .social-media a {
+  
+    color: #2D1F28;
+    text-decoration: none;
+    margin: 10px;
+  
+  }
+  
+  .social-media:hover a {
+  
+    opacity: 0.3;
+    transition: 0.5s;
+  
+  }
+  
+  .social-media:hover a:hover {
+  
+    opacity: 1;
+    transition: 0.5s;
+  
+  }
